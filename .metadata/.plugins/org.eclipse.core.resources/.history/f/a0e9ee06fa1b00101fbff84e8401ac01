@@ -1,0 +1,30 @@
+package rambda;
+
+import java.util.Arrays;
+
+public class ComparableDemo {
+	private int width, height;
+
+	public ComparableDemo(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	public int findArea() {
+		return width * height;
+	}
+
+	public String toString() {
+		return String.format("사각형[폭=%d, 높이=%d]", width, height);
+	}
+}
+
+public class ComparableDemo {
+	public static void main(String[] args) {
+		ComparableDemo[] rectangles = { new ComparableDemo(3, 5), new ComparableDemo(2, 10), new ComparableDemo(5, 5) };
+		Arrays.sort(rectangles);
+		for (ComparableDemo r : rectangles) {
+			System.out.println(r);
+		}
+	}
+}

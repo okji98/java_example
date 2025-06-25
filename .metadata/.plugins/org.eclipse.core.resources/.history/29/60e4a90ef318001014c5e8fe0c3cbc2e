@@ -1,0 +1,15 @@
+package book;
+
+public class BookList {
+	public static void main(String[] args) throws Exception {
+		BookList bl = new BookList();
+		bl.sqlRun();
+		bl.insert();
+		
+		Book book = new Book(0, "데이터베이스", "연희출판사", 30000);
+		bl.insertBook(book);
+		book = new Book(0, "안드로이드", "연희출판사", 50000);
+		bl.insertBook(book);
+		bl.delete(1);
+	}
+}

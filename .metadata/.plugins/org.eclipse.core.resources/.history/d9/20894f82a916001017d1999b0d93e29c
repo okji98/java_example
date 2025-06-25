@@ -1,0 +1,26 @@
+package map;
+
+public class LibraryTest {
+
+	public static void main(String[] args) {
+		Library library = new Library();
+		library.addBook("B001");
+		library.addBook("B002");
+		library.addBook("B003");
+		library.addBook("B001");
+
+		library.rentalBook("B001", "김철수");
+		library.rentalBook("B002", "이영희");
+		library.rentalBook("B001", "이영희");
+		library.rentalBook("B004", "이영희");
+
+		library.allBooksPrint();
+
+		library.returnBook("B001", "김철수");
+		library.returnBook("B003", "김철수");
+		library.returnBook("B004", "김철수");
+		
+		library.allBooksPrint();
+	}
+
+}

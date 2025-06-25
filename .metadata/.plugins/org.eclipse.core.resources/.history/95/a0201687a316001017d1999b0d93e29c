@@ -1,0 +1,63 @@
+package map;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+	private String bookID = null;
+	private String name = null;
+	private List<String> list = new ArrayList<String>();
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Library) {
+			Library library = (Library) obj;
+			return (bookID == library.bookID) && (name.equals(library.name));
+		} else {
+			return false;
+		}
+	}
+
+	public void addBook(String bookID) {
+		if (list.contains(bookID)) {
+			System.out.println("책 ID " + bookID + "는 이미 존재합니다.");
+		} else {
+			this.bookID = bookID;
+			list.add(bookID);
+			System.out.println("책 ID " + bookID + "가 추가되었습니다.");
+		}
+	}
+
+	public void rentalBook(String bookID, String name) {
+		if (list.contains(bookID)) {
+			this.bookID = bookID;
+			this.name = name;
+			System.out.println("책 ID " + bookID + "가 " + name + "에게 대여되었습니다.");
+			list.remove(bookID);
+			if (list.contains(bookID)) {
+				System.out.println("책 ID " + bookID + "는 이미 " + name + "에게 대여중입니다.");
+			}
+		} else {
+			System.out.println("책 ID " + bookID + "가 존재하지 않습니다.");
+		}
+	}
+
+	public boolean returnBook(String bookID) {
+		return true;
+	}
+
+	public void allBooksPrint() {
+		System.out.println("=== 책 대여 상태 ===");
+		if (bookID.equals(bookID)) {
+			System.out.println("책 ID: " + bookID + "- 대여 중 " + "(" + name + ")");
+		} else if (bookID == null) {
+			System.out.println("책 ID: " + bookID + "가 존재하지 않습니다.");
+		} else {
+			System.out.println("책 ID: " + bookID + "는 대여 중이 아닙니다.");
+		}
+
+		if (returnBook(bookID) == true) {
+			System.out.println("책 ID: " + bookID + "가 " + name + "로부터 반납되었습니다.");
+		}
+	}
+}

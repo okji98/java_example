@@ -1,0 +1,16 @@
+package map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class LibraryTest {
+
+	public static void main(String[] args) {
+		Library library = new Library();
+
+		Map<String, String> userAndBook = new HashMap<String, String>();
+
+		userAndBook.put("B001", "김철수");
+	}
+
+}

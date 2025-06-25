@@ -1,0 +1,20 @@
+package map;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class LibraryTest {
+
+	public static void main(String[] args) {
+		Library library = new Library();
+		library.addBook("B001");
+		library.addBook("B002");
+		library.addBook("B003");
+		library.addBook("B001");
+
+		Map<String, String> userAndBook = new HashMap<String, String>();
+
+		userAndBook.put("B001", "김철수");
+	}
+
+}
